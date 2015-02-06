@@ -18,10 +18,10 @@ LIBS	:= -lm
 
 CXXFLAGS:= -O2  $(DFLAG)
 #LDFLAGS :=  # -pg for gprof only!!
-LDFLAGS:=-Wl,-rpath,/usr/local/cuda/lib
+#LDFLAGS:=-Wl
 # for OSX
 ifeq ($(uname), Darwin)
-LDSHARED:= clang++  -dynamiclib -stdlib=libstdc++ # -F/Library/Frameworks -framework CUDA -stdlib=libstdc++
+LDSHARED:= clang++  -dynamiclib -stdlib=libstdc++ -F/Library/Frameworks -framework CUDA #-stdlib=libstdc++
 else
 # for Linux
 LDSHARED:= clang++ -shared 
@@ -30,7 +30,7 @@ endif
 CC=clang++  -stdlib=libstdc++ #-Xcompiler -stdlib=libstdc++ # -F/Library/Frameworks -framework CUDA  -stdlib=libstdc++
 CPPFLAGS:= -I include
 #CU=nvcc -ccbin /usr/bin/clang -Xcompiler -arch x86_64 -stdlib=libstdc++ 
-CU=nvcc -ccbin /usr/bin/clang++ -Xlinker -rpath,/usr/local/cuda/lib # -stdlib=libstdc++ #-m64 -Xcompiler -arch -Xcompiler x86_64 -stdlib=libstdc++ #-stdlib=libstdc++ 
+CU=nvcc -ccbin /usr/bin/clang++ -Xlinker #-rpath,/usr/local/cuda/lib # -stdlib=libstdc++ #-m64 -Xcompiler -arch -Xcompiler x86_64 -stdlib=libstdc++ #-stdlib=libstdc++ 
 
 INC_LIB	:= $(wildcard $(inc_dir)/*.h)
 HMC_SRC	:= $(wildcard $(src_dir)/*.cc)
