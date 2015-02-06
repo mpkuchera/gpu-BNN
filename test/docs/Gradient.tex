@@ -1,0 +1,57 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Analytical Gradient of BNN Potential Energy}
+\author{Michelle Perry}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+\begin{equation*}
+	f(x, \omega) = b + \sum_{j=1}^{H} v_j\tanh{(a_j + \sum_{i=1}^I u_{ji}x_i)}
+\end{equation*}
+\begin{equation*}
+L = \prod_{k=1}^N e^{-\frac{w_k(t_k - f(x_k,\omega))^2}{2\sigma^2}}
+\end{equation*}
+
+\begin{equation*}
+\texttt{Prior}(\omega) = \prod_{i=1}^{n\omega}e^{-\frac{\omega_i^2}{2\sigma_{i}^2}}
+\end{equation*}
+
+\begin{equation*}
+	P = f(x,\omega)*\texttt{Prior}(\omega)
+\end{equation*}
+
+\begin{equation*}
+	U = -\ln{P} = -\ln(L) - \ln \texttt{Prior}(\omega) 
+\end{equation*}
+
+\begin{equation*}
+	U =  \frac{1}{2\sigma^2}\sum_{k=1}^N (w_k (t_k- f(x_k,\omega))^2) + \sum_{i=1}^{n\omega}\frac{\omega_i^2}{2\sigma_{i}^2}
+\end{equation*}
+\begin{equation*}
+\nabla_{\omega}{U} = -\frac{1}{\sigma^2}\sum_{k=1}^N w_k (t_k- f(x_k,\omega))\nabla_{\omega}{f(x_k,\omega)}
+\end{equation*}
+
+
+\begin{equation*}
+\nabla_{\omega}{U}   = \begin{cases}  -\frac{1}{\sigma^2}\sum_{k=1}^N w_k (t_k- f(x_k,\omega))+\frac{b}{\sigma_b}   &: b  \\
+				 	 -\frac{1}{\sigma^2}\sum_{k=1}^N w_k (t_k- f(x_k,\omega)) \tanh{(a_j+ \sum_{i=1}^I{u_{ji}x_i})}+\frac{v_j}{\sigma_v}	 & : v_j \\
+					 -\frac{1}{\sigma^2}\sum_{k=1}^N w_k (t_k- f(x_k,\omega))v_j(1-\tanh^2(a_j+\sum_{i=1}^I{u_{ji}x_i}))+\frac{a_j}{\sigma_a} & : a_j \\	 
+					  -\frac{1}{\sigma^2}\sum_{k=1}^N w_k (t_k- f(x_k,\omega))v_jx_{ik}(1-\tanh^2(a_j+\sum_{i=1}^I{u_{ji}x_{ik}}))+\frac{u_{ji}}{\sigma_u} & : u_{ji} 
+					 \end{cases}
+\end{equation*}
+
+
+
+
+\end{document}  

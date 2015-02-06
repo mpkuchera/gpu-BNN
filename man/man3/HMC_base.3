@@ -1,0 +1,195 @@
+.TH "HMC_base" 3 "Tue Sep 10 2013" "Version 1" "HMC_BNN" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HMC_base \- 
+.PP
+Base Hybrid Monte Carlo class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'HMC_base\&.h'\fP
+.PP
+Inherited by \fBBNN_regression\fP, and \fBHMC_dist\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHMC_base\fP (int l, int nParams)"
+.br
+.ti -1c
+.RI "virtual \fB~HMC_base\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetNP\fP ()"
+.br
+.RI "\fIgetter for NP variable in derived classes \fP"
+.ti -1c
+.RI "std::vector< \fBHMC_type\fP > & \fBit\fP (std::vector< \fBHMC_type\fP > &)"
+.br
+.RI "\fIone HMC iteration \fP"
+.ti -1c
+.RI "virtual \fBHMC_type\fP \fBU\fP (std::vector< \fBHMC_type\fP > &)=0"
+.br
+.RI "\fIcalculate U \fP"
+.ti -1c
+.RI "virtual std::vector< \fBHMC_type\fP > \fBdelU\fP (std::vector< \fBHMC_type\fP > &)=0"
+.br
+.RI "\fIcalculate dU */ \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBHMC_type\fP > \fBcalc_step\fP (std::vector< \fBHMC_type\fP > &\fBq\fP)"
+.br
+.RI "\fIcalculates step size each HMC iteration \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBL\fP"
+.br
+.RI "\fInumber of steps in one HMC iteration \fP"
+.ti -1c
+.RI "int \fBNP\fP"
+.br
+.RI "\fInumber of parameters \fP"
+.ti -1c
+.RI "\fBHMC_type\fP \fBUq0\fP"
+.br
+.RI "\fIpotential at current point \fP"
+.ti -1c
+.RI "std::vector< \fBHMC_type\fP > \fBq\fP"
+.br
+.RI "\fIclass parameters definition to avoid many re-allocations in loops \fP"
+.ti -1c
+.RI "std::vector< \fBHMC_type\fP > \fBp\fP"
+.br
+.RI "\fIclass momentum definition to avoid many re-allocations in loops \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base Hybrid Monte Carlo class\&. 
+
+
+.PP
+.PP
+\fBAuthor:\fP
+.RS 4
+Michelle E\&. Perry 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+created 6/6/2013 updated 9/9/2013 
+.RE
+.PP
+
+.PP
+Definition at line 14 of file HMC_base\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HMC_base::HMC_base (intl, intnParams)\fC [inline]\fP"
+
+.PP
+Definition at line 22 of file HMC_base\&.h\&.
+.SS "virtual HMC_base::~HMC_base ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 29 of file HMC_base\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< \fBHMC_type\fP > HMC_base::calc_step (std::vector< \fBHMC_type\fP > &q)\fC [private]\fP"
+
+.PP
+calculates step size each HMC iteration 
+.PP
+Definition at line 7 of file HMC_base\&.cc\&.
+.PP
+References NP, q, U(), and Uq0\&.
+.PP
+Referenced by it()\&.
+.SS "virtual std::vector<\fBHMC_type\fP> HMC_base::delU (std::vector< \fBHMC_type\fP > &)\fC [pure virtual]\fP"
+
+.PP
+calculate dU */ 
+.PP
+Implemented in \fBBNN_regression\fP, and \fBHMC_dist\fP\&.
+.PP
+Referenced by it()\&.
+.SS "int HMC_base::getNP ()"
+
+.PP
+getter for NP variable in derived classes 
+.PP
+Definition at line 151 of file HMC_base\&.cc\&.
+.PP
+References NP\&.
+.PP
+Referenced by BNN_regression::U()\&.
+.SS "std::vector< \fBHMC_type\fP > & HMC_base::it (std::vector< \fBHMC_type\fP > &q0)"
+
+.PP
+one HMC iteration < Uq0 calculated in this function 
+.PP
+Definition at line 46 of file HMC_base\&.cc\&.
+.PP
+References calc_step(), delU(), L, NP, p, q, U(), and Uq0\&.
+.SS "virtual \fBHMC_type\fP HMC_base::U (std::vector< \fBHMC_type\fP > &)\fC [pure virtual]\fP"
+
+.PP
+calculate U 
+.PP
+Implemented in \fBBNN_regression\fP, and \fBHMC_dist\fP\&.
+.PP
+Referenced by calc_step(), and it()\&.
+.SH "Field Documentation"
+.PP 
+.SS "int HMC_base::L\fC [private]\fP"
+
+.PP
+number of steps in one HMC iteration 
+.PP
+Definition at line 15 of file HMC_base\&.h\&.
+.PP
+Referenced by it()\&.
+.SS "int HMC_base::NP\fC [private]\fP"
+
+.PP
+number of parameters 
+.PP
+Definition at line 16 of file HMC_base\&.h\&.
+.PP
+Referenced by calc_step(), getNP(), and it()\&.
+.SS "std::vector<\fBHMC_type\fP> HMC_base::p\fC [private]\fP"
+
+.PP
+class momentum definition to avoid many re-allocations in loops 
+.PP
+Definition at line 20 of file HMC_base\&.h\&.
+.PP
+Referenced by it()\&.
+.SS "std::vector<\fBHMC_type\fP> HMC_base::q\fC [private]\fP"
+
+.PP
+class parameters definition to avoid many re-allocations in loops 
+.PP
+Definition at line 19 of file HMC_base\&.h\&.
+.PP
+Referenced by calc_step(), HMC_dist::FD(), and it()\&.
+.SS "\fBHMC_type\fP HMC_base::Uq0\fC [private]\fP"
+
+.PP
+potential at current point 
+.PP
+Definition at line 17 of file HMC_base\&.h\&.
+.PP
+Referenced by calc_step(), and it()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HMC_BNN from the source code\&.

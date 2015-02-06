@@ -1,0 +1,273 @@
+.TH "BNN_regression" 3 "Tue Sep 10 2013" "Version 1" "HMC_BNN" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BNN_regression \- 
+.PP
+BNN functional approximation class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'BNN_regression\&.h'\fP
+.PP
+Inherits \fBHMC_base\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBNN_regression\fP (int l, int h, int i)"
+.br
+.ti -1c
+.RI "\fBBNN_regression\fP (int l, int h, int i, std::vector< \fBHMC_type\fP > &data, std::vector< \fBHMC_type\fP > &targets, std::vector< \fBHMC_type\fP > &weights)"
+.br
+.ti -1c
+.RI "virtual \fB~BNN_regression\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBHMC_type\fP \fBU\fP (std::vector< \fBHMC_type\fP > &)"
+.br
+.ti -1c
+.RI "virtual std::vector< \fBHMC_type\fP > \fBdelU\fP (std::vector< \fBHMC_type\fP > &)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (std::vector< \fBHMC_type\fP > &input, \fBHMC_type\fP target, \fBHMC_type\fP weight=1)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHMC_type\fP \fBf\fP (std::vector< \fBHMC_type\fP > &, int)"
+.br
+.RI "\fIneural network function \fP"
+.ti -1c
+.RI "\fBHMC_type\fP \fBLnPrior\fP (std::vector< \fBHMC_type\fP > &)"
+.br
+.RI "\fILogPrior function\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBHMC_type\fP > \fBx\fP"
+.br
+.RI "\fItraining data \fP"
+.ti -1c
+.RI "int \fBH\fP"
+.br
+.RI "\fInumber of hidden nodes \fP"
+.ti -1c
+.RI "int \fBI\fP"
+.br
+.RI "\fInumber of data inputs \fP"
+.ti -1c
+.RI "int \fBN\fP"
+.br
+.RI "\fInumber of training events \fP"
+.ti -1c
+.RI "\fBHMC_type\fP \fBsig\fP"
+.br
+.RI "\fIstandard deviation for priors \fP"
+.ti -1c
+.RI "std::vector< \fBHMC_type\fP > \fBw\fP"
+.br
+.RI "\fItraining event weights \fP"
+.ti -1c
+.RI "std::vector< \fBHMC_type\fP > \fBt\fP"
+.br
+.RI "\fItargets for training data \fP"
+.ti -1c
+.RI "\fBHMC_type\fP \fBsigb\fP"
+.br
+.RI "\fIstandard deviation for b parameters \fP"
+.ti -1c
+.RI "\fBHMC_type\fP \fBsigv\fP"
+.br
+.RI "\fIstandard deviation for v parameters \fP"
+.ti -1c
+.RI "\fBHMC_type\fP \fBsiga\fP"
+.br
+.RI "\fIstandard deviation for a parameters \fP"
+.ti -1c
+.RI "\fBHMC_type\fP \fBsigu\fP"
+.br
+.RI "\fIstandard deviation for u parameters \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+BNN functional approximation class\&. 
+
+
+.PP
+.PP
+\fBAuthor:\fP
+.RS 4
+Michelle E\&. Perry 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+created 25/2/13 updated 9/9/2013 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file BNN_regression\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BNN_regression::BNN_regression (intl, inth, inti)"
+constructor for storing data, targets, and (optional) weights using \fBadd()\fP 
+.PP
+Definition at line 40 of file BNN_regression\&.cc\&.
+.PP
+References t, and x\&.
+.SS "BNN_regression::BNN_regression (intl, inth, inti, std::vector< \fBHMC_type\fP > &data, std::vector< \fBHMC_type\fP > &targets, std::vector< \fBHMC_type\fP > &weights)"
+constructor where data, targets, weights are fully stored by user prior to calling contructor
+.PP
+** NN PARAMETERS q[0] = b; q[j+1] = v_j; q[H+j+1] = a_j q[2H+1+i+j*I] = u_ji 
+.PP
+Definition at line 21 of file BNN_regression\&.cc\&.
+.PP
+References t, and x\&.
+.SS "BNN_regression::~BNN_regression ()\fC [virtual]\fP"
+
+.PP
+Definition at line 63 of file BNN_regression\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void BNN_regression::add (std::vector< \fBHMC_type\fP > &input, \fBHMC_type\fPtarget, \fBHMC_type\fPweight = \fC1\fP)"
+adds to the input, target, and weight array while iterating over each training event 
+.PP
+Definition at line 59 of file BNN_regression\&.cc\&.
+.SS "std::vector< \fBHMC_type\fP > BNN_regression::delU (std::vector< \fBHMC_type\fP > &q)\fC [virtual]\fP"
+analytical derivative of the probability distribution for a regression neural network 
+.PP
+Implements \fBHMC_base\fP\&.
+.PP
+Definition at line 83 of file BNN_regression\&.cc\&.
+.PP
+References f(), H, I, N, sig, siga, sigb, sigu, sigv, t, w, and x\&.
+.SS "\fBHMC_type\fP BNN_regression::f (std::vector< \fBHMC_type\fP > &q, intind)\fC [private]\fP"
+
+.PP
+neural network function 
+.PP
+Definition at line 171 of file BNN_regression\&.cc\&.
+.PP
+References H, I, and x\&.
+.PP
+Referenced by delU(), and U()\&.
+.SS "\fBHMC_type\fP BNN_regression::LnPrior (std::vector< \fBHMC_type\fP > &q)\fC [private]\fP"
+
+.PP
+LogPrior function\&. 
+.PP
+Definition at line 185 of file BNN_regression\&.cc\&.
+.PP
+References H, I, siga, sigb, sigu, and sigv\&.
+.PP
+Referenced by U()\&.
+.SS "\fBHMC_type\fP BNN_regression::U (std::vector< \fBHMC_type\fP > &q)\fC [virtual]\fP"
+probability distribution for a regression neural network 
+.PP
+Implements \fBHMC_base\fP\&.
+.PP
+Definition at line 67 of file BNN_regression\&.cc\&.
+.PP
+References f(), HMC_base::getNP(), LnPrior(), N, sig, t, and w\&.
+.SH "Field Documentation"
+.PP 
+.SS "int BNN_regression::H\fC [private]\fP"
+
+.PP
+number of hidden nodes 
+.PP
+Definition at line 18 of file BNN_regression\&.h\&.
+.PP
+Referenced by delU(), f(), and LnPrior()\&.
+.SS "int BNN_regression::I\fC [private]\fP"
+
+.PP
+number of data inputs 
+.PP
+Definition at line 19 of file BNN_regression\&.h\&.
+.PP
+Referenced by delU(), f(), and LnPrior()\&.
+.SS "int BNN_regression::N\fC [private]\fP"
+
+.PP
+number of training events 
+.PP
+Definition at line 20 of file BNN_regression\&.h\&.
+.PP
+Referenced by delU(), and U()\&.
+.SS "\fBHMC_type\fP BNN_regression::sig\fC [private]\fP"
+
+.PP
+standard deviation for priors 
+.PP
+Definition at line 21 of file BNN_regression\&.h\&.
+.PP
+Referenced by delU(), and U()\&.
+.SS "\fBHMC_type\fP BNN_regression::siga\fC [private]\fP"
+
+.PP
+standard deviation for a parameters 
+.PP
+Definition at line 29 of file BNN_regression\&.h\&.
+.PP
+Referenced by delU(), and LnPrior()\&.
+.SS "\fBHMC_type\fP BNN_regression::sigb\fC [private]\fP"
+
+.PP
+standard deviation for b parameters 
+.PP
+Definition at line 27 of file BNN_regression\&.h\&.
+.PP
+Referenced by delU(), and LnPrior()\&.
+.SS "\fBHMC_type\fP BNN_regression::sigu\fC [private]\fP"
+
+.PP
+standard deviation for u parameters 
+.PP
+Definition at line 30 of file BNN_regression\&.h\&.
+.PP
+Referenced by delU(), and LnPrior()\&.
+.SS "\fBHMC_type\fP BNN_regression::sigv\fC [private]\fP"
+
+.PP
+standard deviation for v parameters 
+.PP
+Definition at line 28 of file BNN_regression\&.h\&.
+.PP
+Referenced by delU(), and LnPrior()\&.
+.SS "std::vector<\fBHMC_type\fP> BNN_regression::t\fC [private]\fP"
+
+.PP
+targets for training data 
+.PP
+Definition at line 23 of file BNN_regression\&.h\&.
+.PP
+Referenced by BNN_regression(), delU(), and U()\&.
+.SS "std::vector<\fBHMC_type\fP> BNN_regression::w\fC [private]\fP"
+
+.PP
+training event weights 
+.PP
+Definition at line 22 of file BNN_regression\&.h\&.
+.PP
+Referenced by delU(), and U()\&.
+.SS "std::vector<\fBHMC_type\fP> BNN_regression::x\fC [private]\fP"
+
+.PP
+training data 
+.PP
+Definition at line 17 of file BNN_regression\&.h\&.
+.PP
+Referenced by BNN_regression(), delU(), and f()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HMC_BNN from the source code\&.

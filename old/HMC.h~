@@ -1,0 +1,4 @@
+#ifndef HMC_H
+#define HMC_H
+float HMC(float eps, vector<float> q);
+#endif

@@ -1,0 +1,286 @@
+\hypertarget{class_h_m_c__base}{\section{H\-M\-C\-\_\-base Class Reference}
+\label{class_h_m_c__base}\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}}
+}
+
+
+Base Hybrid Monte Carlo class.  
+
+
+
+
+{\ttfamily \#include \char`\"{}H\-M\-C\-\_\-base.\-h\char`\"{}}
+
+Inheritance diagram for H\-M\-C\-\_\-base\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_h_m_c__base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_h_m_c__base_a57549355656d15b406ffc0e89cb51be5}{H\-M\-C\-\_\-base} (int l, int n\-Params)
+\item 
+virtual \hyperlink{class_h_m_c__base_a27825ebbf86563706ed8f63b18367152}{$\sim$\-H\-M\-C\-\_\-base} ()
+\item 
+int \hyperlink{class_h_m_c__base_aa83e21d17eadcb907415a832560eb10d}{get\-N\-P} ()
+\begin{DoxyCompactList}\small\item\em getter for N\-P variable in derived classes \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \& \hyperlink{class_h_m_c__base_a92b0fbc606f8c7c9e4e30f58f731921b}{it} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&)
+\begin{DoxyCompactList}\small\item\em one H\-M\-C iteration \end{DoxyCompactList}\item 
+virtual \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_h_m_c__base_aab381fd0838b1a831906025b98a0c897}{U} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&)=0
+\begin{DoxyCompactList}\small\item\em calculate U \end{DoxyCompactList}\item 
+virtual std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \hyperlink{class_h_m_c__base_acd263756d76e967e6ab678456cb88550}{del\-U} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&)=0
+\begin{DoxyCompactList}\small\item\em calculate d\-U $\ast$/ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \hyperlink{class_h_m_c__base_a78e3fc2958f28c03b0af2dae57bb1902}{calc\-\_\-step} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&\hyperlink{class_h_m_c__base_a9cb5e5ac7774b066976e6e9cac0dbfe8}{q})
+\begin{DoxyCompactList}\small\item\em calculates step size each H\-M\-C iteration \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_h_m_c__base_a784a93d47df670ad254249233b6d81a1}{L}
+\begin{DoxyCompactList}\small\item\em number of steps in one H\-M\-C iteration \end{DoxyCompactList}\item 
+int \hyperlink{class_h_m_c__base_a204db698729d8f3ac18cbe8ce6257440}{N\-P}
+\begin{DoxyCompactList}\small\item\em number of parameters \end{DoxyCompactList}\item 
+\hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_h_m_c__base_af1b25a6ca516eebc2385c6359daeff32}{Uq0}
+\begin{DoxyCompactList}\small\item\em potential at current point \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \hyperlink{class_h_m_c__base_a9cb5e5ac7774b066976e6e9cac0dbfe8}{q}
+\begin{DoxyCompactList}\small\item\em class parameters definition to avoid many re-\/allocations in loops \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \hyperlink{class_h_m_c__base_a138936eeaf2656aa5f2d51395c8e68f5}{p}
+\begin{DoxyCompactList}\small\item\em class momentum definition to avoid many re-\/allocations in loops \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base Hybrid Monte Carlo class. 
+
+
+
+
+
+\begin{DoxyAuthor}{Author}
+Michelle E. Perry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+created 6/6/2013 updated 9/9/2013 
+\end{DoxyDate}
+
+
+Definition at line 14 of file H\-M\-C\-\_\-base.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_h_m_c__base_a57549355656d15b406ffc0e89cb51be5}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}}
+\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{H\-M\-C\-\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}H\-M\-C\-\_\-base\-::\-H\-M\-C\-\_\-base (
+\begin{DoxyParamCaption}
+\item[{int}]{l, }
+\item[{int}]{n\-Params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_h_m_c__base_a57549355656d15b406ffc0e89cb51be5}
+
+
+Definition at line 22 of file H\-M\-C\-\_\-base.\-h.
+
+\hypertarget{class_h_m_c__base_a27825ebbf86563706ed8f63b18367152}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!$\sim$\-H\-M\-C\-\_\-base@{$\sim$\-H\-M\-C\-\_\-base}}
+\index{$\sim$\-H\-M\-C\-\_\-base@{$\sim$\-H\-M\-C\-\_\-base}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{$\sim$\-H\-M\-C\-\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}virtual H\-M\-C\-\_\-base\-::$\sim$\-H\-M\-C\-\_\-base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_h_m_c__base_a27825ebbf86563706ed8f63b18367152}
+
+
+Definition at line 29 of file H\-M\-C\-\_\-base.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_h_m_c__base_a78e3fc2958f28c03b0af2dae57bb1902}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!calc\-\_\-step@{calc\-\_\-step}}
+\index{calc\-\_\-step@{calc\-\_\-step}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{calc\-\_\-step}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ H\-M\-C\-\_\-base\-::calc\-\_\-step (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_m_c__base_a78e3fc2958f28c03b0af2dae57bb1902}
+
+
+calculates step size each H\-M\-C iteration 
+
+
+
+Definition at line 7 of file H\-M\-C\-\_\-base.\-cc.
+
+
+
+References N\-P, q, U(), and Uq0.
+
+
+
+Referenced by it().
+
+\hypertarget{class_h_m_c__base_acd263756d76e967e6ab678456cb88550}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!del\-U@{del\-U}}
+\index{del\-U@{del\-U}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{del\-U}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::vector$<${\bf H\-M\-C\-\_\-type}$>$ H\-M\-C\-\_\-base\-::del\-U (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_h_m_c__base_acd263756d76e967e6ab678456cb88550}
+
+
+calculate d\-U $\ast$/ 
+
+
+
+Implemented in \hyperlink{class_b_n_n__regression_a779b2feff8192046b2670e80b88547ba}{B\-N\-N\-\_\-regression}, and \hyperlink{class_h_m_c__dist_a0fdfe885bac1033a4cccc8442b225937}{H\-M\-C\-\_\-dist}.
+
+
+
+Referenced by it().
+
+\hypertarget{class_h_m_c__base_aa83e21d17eadcb907415a832560eb10d}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!get\-N\-P@{get\-N\-P}}
+\index{get\-N\-P@{get\-N\-P}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{get\-N\-P}]{\setlength{\rightskip}{0pt plus 5cm}int H\-M\-C\-\_\-base\-::get\-N\-P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_h_m_c__base_aa83e21d17eadcb907415a832560eb10d}
+
+
+getter for N\-P variable in derived classes 
+
+
+
+Definition at line 151 of file H\-M\-C\-\_\-base.\-cc.
+
+
+
+References N\-P.
+
+
+
+Referenced by B\-N\-N\-\_\-regression\-::\-U().
+
+\hypertarget{class_h_m_c__base_a92b0fbc606f8c7c9e4e30f58f731921b}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!it@{it}}
+\index{it@{it}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{it}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \& H\-M\-C\-\_\-base\-::it (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{q0}
+\end{DoxyParamCaption}
+)}}\label{class_h_m_c__base_a92b0fbc606f8c7c9e4e30f58f731921b}
+
+
+one H\-M\-C iteration 
+
+$<$ Uq0 calculated in this function 
+
+Definition at line 46 of file H\-M\-C\-\_\-base.\-cc.
+
+
+
+References calc\-\_\-step(), del\-U(), L, N\-P, p, q, U(), and Uq0.
+
+\hypertarget{class_h_m_c__base_aab381fd0838b1a831906025b98a0c897}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!U@{U}}
+\index{U@{U}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{U}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf H\-M\-C\-\_\-type} H\-M\-C\-\_\-base\-::\-U (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_h_m_c__base_aab381fd0838b1a831906025b98a0c897}
+
+
+calculate U 
+
+
+
+Implemented in \hyperlink{class_b_n_n__regression_a57303ef1ca25e08c7489fb5095f23527}{B\-N\-N\-\_\-regression}, and \hyperlink{class_h_m_c__dist_ab536db252ec2926399e030b576a47f22}{H\-M\-C\-\_\-dist}.
+
+
+
+Referenced by calc\-\_\-step(), and it().
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_h_m_c__base_a784a93d47df670ad254249233b6d81a1}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!L@{L}}
+\index{L@{L}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{L}]{\setlength{\rightskip}{0pt plus 5cm}int H\-M\-C\-\_\-base\-::\-L\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_m_c__base_a784a93d47df670ad254249233b6d81a1}
+
+
+number of steps in one H\-M\-C iteration 
+
+
+
+Definition at line 15 of file H\-M\-C\-\_\-base.\-h.
+
+
+
+Referenced by it().
+
+\hypertarget{class_h_m_c__base_a204db698729d8f3ac18cbe8ce6257440}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!N\-P@{N\-P}}
+\index{N\-P@{N\-P}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{N\-P}]{\setlength{\rightskip}{0pt plus 5cm}int H\-M\-C\-\_\-base\-::\-N\-P\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_m_c__base_a204db698729d8f3ac18cbe8ce6257440}
+
+
+number of parameters 
+
+
+
+Definition at line 16 of file H\-M\-C\-\_\-base.\-h.
+
+
+
+Referenced by calc\-\_\-step(), get\-N\-P(), and it().
+
+\hypertarget{class_h_m_c__base_a138936eeaf2656aa5f2d51395c8e68f5}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!p@{p}}
+\index{p@{p}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{p}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf H\-M\-C\-\_\-type}$>$ H\-M\-C\-\_\-base\-::p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_m_c__base_a138936eeaf2656aa5f2d51395c8e68f5}
+
+
+class momentum definition to avoid many re-\/allocations in loops 
+
+
+
+Definition at line 20 of file H\-M\-C\-\_\-base.\-h.
+
+
+
+Referenced by it().
+
+\hypertarget{class_h_m_c__base_a9cb5e5ac7774b066976e6e9cac0dbfe8}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!q@{q}}
+\index{q@{q}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{q}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf H\-M\-C\-\_\-type}$>$ H\-M\-C\-\_\-base\-::q\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_m_c__base_a9cb5e5ac7774b066976e6e9cac0dbfe8}
+
+
+class parameters definition to avoid many re-\/allocations in loops 
+
+
+
+Definition at line 19 of file H\-M\-C\-\_\-base.\-h.
+
+
+
+Referenced by calc\-\_\-step(), H\-M\-C\-\_\-dist\-::\-F\-D(), and it().
+
+\hypertarget{class_h_m_c__base_af1b25a6ca516eebc2385c6359daeff32}{\index{H\-M\-C\-\_\-base@{H\-M\-C\-\_\-base}!Uq0@{Uq0}}
+\index{Uq0@{Uq0}!HMC_base@{H\-M\-C\-\_\-base}}
+\subsubsection[{Uq0}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-M\-C\-\_\-type} H\-M\-C\-\_\-base\-::\-Uq0\hspace{0.3cm}{\ttfamily [private]}}}\label{class_h_m_c__base_af1b25a6ca516eebc2385c6359daeff32}
+
+
+potential at current point 
+
+
+
+Definition at line 17 of file H\-M\-C\-\_\-base.\-h.
+
+
+
+Referenced by calc\-\_\-step(), and it().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_h_m_c__base_8h}{H\-M\-C\-\_\-base.\-h}\item 
+src/\hyperlink{_h_m_c__base_8cc}{H\-M\-C\-\_\-base.\-cc}\end{DoxyCompactItemize}

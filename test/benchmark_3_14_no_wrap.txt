@@ -1,0 +1,2 @@
+I	H	L	nTrain	nOut	time
+6	10	100	2000	200	1033.43

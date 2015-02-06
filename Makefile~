@@ -1,0 +1,87 @@
+
+CUDA_HOME = /usr/local/cuda
+# define sub-directories
+inc_dir	:= include
+src_dir	:= src
+app_dir	:= test
+tmp_dir	:= tmp
+lib_dir	:= lib
+bin_dir := bin
+uname	:= $(shell uname)
+
+slib_name := HMCMC
+sharedlib := $(PWD)/$(lib_dir)/lib$(slib_name).so
+
+# Remove @ symbol to have a verbose printout
+AT 	:= 
+LIBS	:= -lm 
+
+CXXFLAGS:= -O2 `root-config --cflags` $(DFLAG)
+LDFLAGS := `root-config --libs` # -pg for gprof only!!
+
+# for OSX
+ifeq ($(uname), Darwin)
+LDSHARED:= clang++ -dynamiclib 
+else
+# for Linux
+LDSHARED:= clang++ -shared 
+endif
+
+CC=clang++
+CPPFLAGS:= -I include
+CU=nvcc -ccbin /usr/bin/clang -Xcompiler -stdlib=libstdc++
+
+INC_LIB	:= $(wildcard $(inc_dir)/*.h)
+HMC_SRC	:= $(wildcard $(src_dir)/*.cc)
+APP_SRC	:= $(wildcard $(app_dir)/*.cc)
+CUDA_SRC:= $(wildcard $(src_dir)/*.cu) 
+
+#say	:= $(shell echo -e "INC_LIB: $(INC_LIB)" >& 2)
+#say	:= $(shell echo -e "HMC_SRC: $(HMC_SRC)" >& 2)
+#say	:= $(shell echo -e "APP_SRC: $(APP_SRC)" >& 2)
+
+lib_objs := $(subst $(src_dir)/,$(lib_dir)/,$(HMC_SRC:.cc=.o))
+app_objs	:= $(subst $(app_dir)/,$(lib_dir)/,$(APP_SRC:.cc=.o))
+cuda_objs	:= $(subst $(src_dir)/,$(lib_dir)/,$(CUDA_SRC:.cu=.o))
+
+say	:= $(shell echo -e "app_objs: $(app_objs)" >& 2)
+say	:= $(shell echo -e "lib_objs: $(lib_objs)" >& 2)
+say 	:= $(shell echo -e "cuda_objs: $(cuda_objs)" >& 2)
+
+# Construct list of applications
+applications	:= $(subst $(app_dir)/,$(bin_dir)/,$(APP_SRC:.cc=))
+say	:= $(shell echo -e "applications: $(applications)" >& 2)
+#$(error bye)
+
+
+$(applications)	: $(bin_dir)/%	:  $(lib_dir)/%.o $(sharedlib)
+	@echo "---> Linking program $@  and $<"
+	$(AT)$(CC) `root-config --libs` -L$(lib_dir) -l$(slib_name) $< -o $@
+
+$(sharedlib) : $(lib_objs) $(cuda_objs) $(usr_objs)
+	@echo "---> Linking $@"
+	$(AT)$(LDSHARED) $(LDFLAGS) -L$(CUDA_HOME)/lib -lcuda -lcudart -lcublas $(cuda_objs) $(lib_objs) $(usr_objs) -o $@
+
+$(app_objs)	: $(lib_dir)/%.o : $(app_dir)/%.cc $(INC_LIB) $(lib_objs)
+	@echo "----> Compiling  app_objs $@"
+	$(AT)$(CU)  $(CPPFLAGS)  -lcuda -lcudart -lcufft -lcublas -m64 -I/Users/mperry/external/root-v5-34-00-patches/include -c -o $@ $<
+
+$(cuda_objs)	: $(lib_dir)/%.o : $(src_dir)/%.cu $(INC_LIB)
+	@echo "----> Compiling cuda_objs $@"
+	$(AT)$(CU) $(CPPFLAGS) -lcuda -lcudart -lcufft -lcublas -m64 -I/Users/mperry/external/root-v5-34-00-patches/include -c -o $@ $<
+
+$(lib_objs)	: $(lib_dir)/%.o : $(src_dir)/%.cc $(INC_LIB)
+	@echo "----> Compiling lib_objs $@"
+	$(AT)$(CC) $(CPPFLAGS) $(CXXFLAGS) -c -o $@ $<
+
+#prof	:
+#	LDFLAGS := -g -pg `root-config --libs`
+#	make
+# 	Define clean up rules
+clean	:
+	rm -rf $(lib_dir)/*.o
+	rm -rf $(bin_dir)/*.so
+
+veryclean	:
+	rm -rf $(tmp_dir)/*.o
+	rm -rf $(bin_dir)/*

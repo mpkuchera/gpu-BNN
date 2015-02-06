@@ -1,0 +1,93 @@
+.TH "HMC_dist" 3 "Tue Sep 10 2013" "Version 1" "HMC_BNN" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HMC_dist \- 
+.PP
+probability distribution class  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'HMC_dist\&.h'\fP
+.PP
+Inherits \fBHMC_base\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHMC_dist\fP (int l, int nParams)"
+.br
+.ti -1c
+.RI "virtual \fBHMC_type\fP \fBU\fP (std::vector< \fBHMC_type\fP > &)"
+.br
+.RI "\fIU = -ln(P(q)) \fP"
+.ti -1c
+.RI "virtual std::vector< \fBHMC_type\fP > \fBdelU\fP (std::vector< \fBHMC_type\fP > &)"
+.br
+.RI "\fIcalculate dU */ \fP"
+.ti -1c
+.RI "std::vector< \fBHMC_type\fP > \fBFD\fP (std::vector< \fBHMC_type\fP > &\fBq\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+probability distribution class 
+
+
+.PP
+.PP
+\fBAuthor:\fP
+.RS 4
+Michelle E\&. Perry 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+created 21/2/13 updated 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file HMC_dist\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HMC_dist::HMC_dist (intl, intnParams)\fC [inline]\fP"
+
+.PP
+Definition at line 17 of file HMC_dist\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< \fBHMC_type\fP > HMC_dist::delU (std::vector< \fBHMC_type\fP > &)\fC [virtual]\fP"
+
+.PP
+calculate dU */ 
+.PP
+Implements \fBHMC_base\fP\&.
+.PP
+Definition at line 39 of file multidimprob\&.cc\&.
+.PP
+References FD()\&.
+.SS "std::vector<\fBHMC_type\fP> HMC_dist::FD (std::vector< \fBHMC_type\fP > &q)\fC [inline]\fP"
+
+.PP
+Definition at line 25 of file HMC_dist\&.h\&.
+.PP
+References HMC_base::q, and U()\&.
+.PP
+Referenced by delU()\&.
+.SS "\fBHMC_type\fP HMC_dist::U (std::vector< \fBHMC_type\fP > &q)\fC [virtual]\fP"
+
+.PP
+U = -ln(P(q)) 
+.PP
+Implements \fBHMC_base\fP\&.
+.PP
+Definition at line 5 of file multidimprob\&.cc\&.
+.PP
+Referenced by FD()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HMC_BNN from the source code\&.

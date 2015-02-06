@@ -1,0 +1,6 @@
+#include "HMC.h"
+
+float HMC(float eps, vector<float> q) {
+
+
+}

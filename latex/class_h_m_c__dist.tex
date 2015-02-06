@@ -1,0 +1,137 @@
+\hypertarget{class_h_m_c__dist}{\section{H\-M\-C\-\_\-dist Class Reference}
+\label{class_h_m_c__dist}\index{H\-M\-C\-\_\-dist@{H\-M\-C\-\_\-dist}}
+}
+
+
+probability distribution class  
+
+
+
+
+{\ttfamily \#include \char`\"{}H\-M\-C\-\_\-dist.\-h\char`\"{}}
+
+Inheritance diagram for H\-M\-C\-\_\-dist\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_h_m_c__dist}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_h_m_c__dist_a62e12ed5444505af3ffae0e6971845e2}{H\-M\-C\-\_\-dist} (int l, int n\-Params)
+\item 
+virtual \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_h_m_c__dist_ab536db252ec2926399e030b576a47f22}{U} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&)
+\begin{DoxyCompactList}\small\item\em U = -\/ln(P(q)) \end{DoxyCompactList}\item 
+virtual std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \hyperlink{class_h_m_c__dist_a0fdfe885bac1033a4cccc8442b225937}{del\-U} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&)
+\begin{DoxyCompactList}\small\item\em calculate d\-U $\ast$/ \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \hyperlink{class_h_m_c__dist_adf7687e9feb76025e5cd3095c357cc10}{F\-D} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&\hyperlink{class_h_m_c__base_a9cb5e5ac7774b066976e6e9cac0dbfe8}{q})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+probability distribution class 
+
+
+
+
+
+\begin{DoxyAuthor}{Author}
+Michelle E. Perry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+created 21/2/13 updated 
+\end{DoxyDate}
+
+
+Definition at line 15 of file H\-M\-C\-\_\-dist.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_h_m_c__dist_a62e12ed5444505af3ffae0e6971845e2}{\index{H\-M\-C\-\_\-dist@{H\-M\-C\-\_\-dist}!H\-M\-C\-\_\-dist@{H\-M\-C\-\_\-dist}}
+\index{H\-M\-C\-\_\-dist@{H\-M\-C\-\_\-dist}!HMC_dist@{H\-M\-C\-\_\-dist}}
+\subsubsection[{H\-M\-C\-\_\-dist}]{\setlength{\rightskip}{0pt plus 5cm}H\-M\-C\-\_\-dist\-::\-H\-M\-C\-\_\-dist (
+\begin{DoxyParamCaption}
+\item[{int}]{l, }
+\item[{int}]{n\-Params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_h_m_c__dist_a62e12ed5444505af3ffae0e6971845e2}
+
+
+Definition at line 17 of file H\-M\-C\-\_\-dist.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_h_m_c__dist_a0fdfe885bac1033a4cccc8442b225937}{\index{H\-M\-C\-\_\-dist@{H\-M\-C\-\_\-dist}!del\-U@{del\-U}}
+\index{del\-U@{del\-U}!HMC_dist@{H\-M\-C\-\_\-dist}}
+\subsubsection[{del\-U}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ H\-M\-C\-\_\-dist\-::del\-U (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_h_m_c__dist_a0fdfe885bac1033a4cccc8442b225937}
+
+
+calculate d\-U $\ast$/ 
+
+
+
+Implements \hyperlink{class_h_m_c__base_acd263756d76e967e6ab678456cb88550}{H\-M\-C\-\_\-base}.
+
+
+
+Definition at line 39 of file multidimprob.\-cc.
+
+
+
+References F\-D().
+
+\hypertarget{class_h_m_c__dist_adf7687e9feb76025e5cd3095c357cc10}{\index{H\-M\-C\-\_\-dist@{H\-M\-C\-\_\-dist}!F\-D@{F\-D}}
+\index{F\-D@{F\-D}!HMC_dist@{H\-M\-C\-\_\-dist}}
+\subsubsection[{F\-D}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf H\-M\-C\-\_\-type}$>$ H\-M\-C\-\_\-dist\-::\-F\-D (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_h_m_c__dist_adf7687e9feb76025e5cd3095c357cc10}
+
+
+Definition at line 25 of file H\-M\-C\-\_\-dist.\-h.
+
+
+
+References H\-M\-C\-\_\-base\-::q, and U().
+
+
+
+Referenced by del\-U().
+
+\hypertarget{class_h_m_c__dist_ab536db252ec2926399e030b576a47f22}{\index{H\-M\-C\-\_\-dist@{H\-M\-C\-\_\-dist}!U@{U}}
+\index{U@{U}!HMC_dist@{H\-M\-C\-\_\-dist}}
+\subsubsection[{U}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-M\-C\-\_\-type} H\-M\-C\-\_\-dist\-::\-U (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_h_m_c__dist_ab536db252ec2926399e030b576a47f22}
+
+
+U = -\/ln(P(q)) 
+
+
+
+Implements \hyperlink{class_h_m_c__base_aab381fd0838b1a831906025b98a0c897}{H\-M\-C\-\_\-base}.
+
+
+
+Definition at line 5 of file multidimprob.\-cc.
+
+
+
+Referenced by F\-D().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_h_m_c__dist_8h}{H\-M\-C\-\_\-dist.\-h}\item 
+src/\hyperlink{multidimprob_8cc}{multidimprob.\-cc}\end{DoxyCompactItemize}

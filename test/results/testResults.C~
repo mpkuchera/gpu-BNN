@@ -1,0 +1,45 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include "Z2mass_2_1_14.cpp"
+using  namespace std;
+
+
+int main(){
+  int inp = 6;
+  int numEvts = 30955;
+  float nn_mZ2[numEvts];
+  float mZ2[numEvts];
+  string data_file = "../data/Z2mass.dat";
+  ifstream dFile(data_file.c_str());
+  if(!dFile.is_open())
+    cout << "can not open data file" << endl;
+  
+  int ind = -10;
+  int row = 0;
+  vector<float> data(inp);
+  string line; 
+  while(!dFile.eof()){
+    getline(dFile,line);
+    stringstream ss(stringstream::in | stringstream::out);
+    ss << line;
+    for(int j=0;j<inp;j++){
+      //ind = inp*row+j;
+      ss >> data[j];
+    }
+    ss >> mZ2[row];
+    nn_mZ2[row] = Z2mass_3_1_14(data[0],data[1],data[2],data[3],data[4],data[5]);
+    row++;
+  }
+  dFile.close();
+ 
+  ofstream of("Z2mass_BNN_3_1.txt");
+  for(int i=0;i<numEvts;i++){
+    of << setw(10) << left << mZ2[i] << setw(10) << left << nn_mZ2[i] << endl;
+  }
+  of.close();
+  return 0;
+}

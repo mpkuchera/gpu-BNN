@@ -1,0 +1,412 @@
+\hypertarget{class_b_n_n__regression}{\section{B\-N\-N\-\_\-regression Class Reference}
+\label{class_b_n_n__regression}\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}}
+}
+
+
+B\-N\-N functional approximation class.  
+
+
+
+
+{\ttfamily \#include \char`\"{}B\-N\-N\-\_\-regression.\-h\char`\"{}}
+
+Inheritance diagram for B\-N\-N\-\_\-regression\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_b_n_n__regression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_b_n_n__regression_acc1e541db00ddc40d6d1038b3e757f99}{B\-N\-N\-\_\-regression} (int l, int h, int i)
+\item 
+\hyperlink{class_b_n_n__regression_a0096fd7a59f8b57dea848bf3a8df8c7d}{B\-N\-N\-\_\-regression} (int l, int h, int i, std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&data, std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&targets, std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&weights)
+\item 
+virtual \hyperlink{class_b_n_n__regression_a6a47225939e7f7b9c33d415f315abc48}{$\sim$\-B\-N\-N\-\_\-regression} ()
+\item 
+virtual \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_b_n_n__regression_a57303ef1ca25e08c7489fb5095f23527}{U} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&)
+\item 
+virtual std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \hyperlink{class_b_n_n__regression_a779b2feff8192046b2670e80b88547ba}{del\-U} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&)
+\item 
+void \hyperlink{class_b_n_n__regression_aec01e7a9c47f666909699e8e50dad2e4}{add} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&input, \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} target, \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} weight=1)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_b_n_n__regression_a0f6edf9b223a6aa5fff75b9678592500}{f} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&, int)
+\begin{DoxyCompactList}\small\item\em neural network function \end{DoxyCompactList}\item 
+\hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_b_n_n__regression_ac1006eb66df1e5a874c47eb1dae22c81}{Ln\-Prior} (std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Log\-Prior function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \hyperlink{class_b_n_n__regression_a81f1e9e60fc0c057a99687ec6be99c6e}{x}
+\begin{DoxyCompactList}\small\item\em training data \end{DoxyCompactList}\item 
+int \hyperlink{class_b_n_n__regression_a0f200c3e1f769b7f7287751dbb9a879d}{H}
+\begin{DoxyCompactList}\small\item\em number of hidden nodes \end{DoxyCompactList}\item 
+int \hyperlink{class_b_n_n__regression_a134c65919bfa6fb8cb784c9398be3230}{I}
+\begin{DoxyCompactList}\small\item\em number of data inputs \end{DoxyCompactList}\item 
+int \hyperlink{class_b_n_n__regression_af6ab772dcedde86e69cfd29cb3115387}{N}
+\begin{DoxyCompactList}\small\item\em number of training events \end{DoxyCompactList}\item 
+\hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_b_n_n__regression_a9f95130775752bea784e043d832945c1}{sig}
+\begin{DoxyCompactList}\small\item\em standard deviation for priors \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \hyperlink{class_b_n_n__regression_a950982785131b5e7945742ef40dd5860}{w}
+\begin{DoxyCompactList}\small\item\em training event weights \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} $>$ \hyperlink{class_b_n_n__regression_aa99d3e95fd4751552cbafec043b4b27d}{t}
+\begin{DoxyCompactList}\small\item\em targets for training data \end{DoxyCompactList}\item 
+\hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_b_n_n__regression_a6c793005c574b73cfe7d0e1776c21c52}{sigb}
+\begin{DoxyCompactList}\small\item\em standard deviation for b parameters \end{DoxyCompactList}\item 
+\hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_b_n_n__regression_af06eef668a70e92a122b185c55003b66}{sigv}
+\begin{DoxyCompactList}\small\item\em standard deviation for v parameters \end{DoxyCompactList}\item 
+\hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_b_n_n__regression_a608b84f81e365e0fd18662583982bc1f}{siga}
+\begin{DoxyCompactList}\small\item\em standard deviation for a parameters \end{DoxyCompactList}\item 
+\hyperlink{define__type_8h_a9adf655d34223b34db3baff5c7ce420c}{H\-M\-C\-\_\-type} \hyperlink{class_b_n_n__regression_ac7097e88870f47f312e8de1c6f81c04b}{sigu}
+\begin{DoxyCompactList}\small\item\em standard deviation for u parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+B\-N\-N functional approximation class. 
+
+
+
+
+
+\begin{DoxyAuthor}{Author}
+Michelle E. Perry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+created 25/2/13 updated 9/9/2013 
+\end{DoxyDate}
+
+
+Definition at line 15 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_b_n_n__regression_acc1e541db00ddc40d6d1038b3e757f99}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}}
+\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{B\-N\-N\-\_\-regression}]{\setlength{\rightskip}{0pt plus 5cm}B\-N\-N\-\_\-regression\-::\-B\-N\-N\-\_\-regression (
+\begin{DoxyParamCaption}
+\item[{int}]{l, }
+\item[{int}]{h, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_b_n_n__regression_acc1e541db00ddc40d6d1038b3e757f99}
+constructor for storing data, targets, and (optional) weights using \hyperlink{class_b_n_n__regression_aec01e7a9c47f666909699e8e50dad2e4}{add()} 
+
+Definition at line 40 of file B\-N\-N\-\_\-regression.\-cc.
+
+
+
+References t, and x.
+
+\hypertarget{class_b_n_n__regression_a0096fd7a59f8b57dea848bf3a8df8c7d}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}}
+\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{B\-N\-N\-\_\-regression}]{\setlength{\rightskip}{0pt plus 5cm}B\-N\-N\-\_\-regression\-::\-B\-N\-N\-\_\-regression (
+\begin{DoxyParamCaption}
+\item[{int}]{l, }
+\item[{int}]{h, }
+\item[{int}]{i, }
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{data, }
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{targets, }
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{weights}
+\end{DoxyParamCaption}
+)}}\label{class_b_n_n__regression_a0096fd7a59f8b57dea848bf3a8df8c7d}
+constructor where data, targets, weights are fully stored by user prior to calling contructor
+
+$\ast$$\ast$ N\-N P\-A\-R\-A\-M\-E\-T\-E\-R\-S q\mbox{[}0\mbox{]} = b; q\mbox{[}j+1\mbox{]} = v\-\_\-j; q\mbox{[}H+j+1\mbox{]} = a\-\_\-j q\mbox{[}2\-H+1+i+j$\ast$\-I\mbox{]} = u\-\_\-ji 
+
+Definition at line 21 of file B\-N\-N\-\_\-regression.\-cc.
+
+
+
+References t, and x.
+
+\hypertarget{class_b_n_n__regression_a6a47225939e7f7b9c33d415f315abc48}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!$\sim$\-B\-N\-N\-\_\-regression@{$\sim$\-B\-N\-N\-\_\-regression}}
+\index{$\sim$\-B\-N\-N\-\_\-regression@{$\sim$\-B\-N\-N\-\_\-regression}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{$\sim$\-B\-N\-N\-\_\-regression}]{\setlength{\rightskip}{0pt plus 5cm}B\-N\-N\-\_\-regression\-::$\sim$\-B\-N\-N\-\_\-regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_b_n_n__regression_a6a47225939e7f7b9c33d415f315abc48}
+
+
+Definition at line 63 of file B\-N\-N\-\_\-regression.\-cc.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_b_n_n__regression_aec01e7a9c47f666909699e8e50dad2e4}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!add@{add}}
+\index{add@{add}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void B\-N\-N\-\_\-regression\-::add (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{input, }
+\item[{{\bf H\-M\-C\-\_\-type}}]{target, }
+\item[{{\bf H\-M\-C\-\_\-type}}]{weight = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{class_b_n_n__regression_aec01e7a9c47f666909699e8e50dad2e4}
+adds to the input, target, and weight array while iterating over each training event 
+
+Definition at line 59 of file B\-N\-N\-\_\-regression.\-cc.
+
+\hypertarget{class_b_n_n__regression_a779b2feff8192046b2670e80b88547ba}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!del\-U@{del\-U}}
+\index{del\-U@{del\-U}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{del\-U}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ B\-N\-N\-\_\-regression\-::del\-U (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_b_n_n__regression_a779b2feff8192046b2670e80b88547ba}
+analytical derivative of the probability distribution for a regression neural network 
+
+Implements \hyperlink{class_h_m_c__base_acd263756d76e967e6ab678456cb88550}{H\-M\-C\-\_\-base}.
+
+
+
+Definition at line 83 of file B\-N\-N\-\_\-regression.\-cc.
+
+
+
+References f(), H, I, N, sig, siga, sigb, sigu, sigv, t, w, and x.
+
+\hypertarget{class_b_n_n__regression_a0f6edf9b223a6aa5fff75b9678592500}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!f@{f}}
+\index{f@{f}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{f}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-M\-C\-\_\-type} B\-N\-N\-\_\-regression\-::f (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{q, }
+\item[{int}]{ind}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_a0f6edf9b223a6aa5fff75b9678592500}
+
+
+neural network function 
+
+
+
+Definition at line 171 of file B\-N\-N\-\_\-regression.\-cc.
+
+
+
+References H, I, and x.
+
+
+
+Referenced by del\-U(), and U().
+
+\hypertarget{class_b_n_n__regression_ac1006eb66df1e5a874c47eb1dae22c81}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!Ln\-Prior@{Ln\-Prior}}
+\index{Ln\-Prior@{Ln\-Prior}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{Ln\-Prior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-M\-C\-\_\-type} B\-N\-N\-\_\-regression\-::\-Ln\-Prior (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_ac1006eb66df1e5a874c47eb1dae22c81}
+
+
+Log\-Prior function. 
+
+
+
+Definition at line 185 of file B\-N\-N\-\_\-regression.\-cc.
+
+
+
+References H, I, siga, sigb, sigu, and sigv.
+
+
+
+Referenced by U().
+
+\hypertarget{class_b_n_n__regression_a57303ef1ca25e08c7489fb5095f23527}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!U@{U}}
+\index{U@{U}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{U}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-M\-C\-\_\-type} B\-N\-N\-\_\-regression\-::\-U (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf H\-M\-C\-\_\-type} $>$ \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_b_n_n__regression_a57303ef1ca25e08c7489fb5095f23527}
+probability distribution for a regression neural network 
+
+Implements \hyperlink{class_h_m_c__base_aab381fd0838b1a831906025b98a0c897}{H\-M\-C\-\_\-base}.
+
+
+
+Definition at line 67 of file B\-N\-N\-\_\-regression.\-cc.
+
+
+
+References f(), H\-M\-C\-\_\-base\-::get\-N\-P(), Ln\-Prior(), N, sig, t, and w.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_b_n_n__regression_a0f200c3e1f769b7f7287751dbb9a879d}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!H@{H}}
+\index{H@{H}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}int B\-N\-N\-\_\-regression\-::\-H\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_a0f200c3e1f769b7f7287751dbb9a879d}
+
+
+number of hidden nodes 
+
+
+
+Definition at line 18 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by del\-U(), f(), and Ln\-Prior().
+
+\hypertarget{class_b_n_n__regression_a134c65919bfa6fb8cb784c9398be3230}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!I@{I}}
+\index{I@{I}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{I}]{\setlength{\rightskip}{0pt plus 5cm}int B\-N\-N\-\_\-regression\-::\-I\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_a134c65919bfa6fb8cb784c9398be3230}
+
+
+number of data inputs 
+
+
+
+Definition at line 19 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by del\-U(), f(), and Ln\-Prior().
+
+\hypertarget{class_b_n_n__regression_af6ab772dcedde86e69cfd29cb3115387}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!N@{N}}
+\index{N@{N}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{N}]{\setlength{\rightskip}{0pt plus 5cm}int B\-N\-N\-\_\-regression\-::\-N\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_af6ab772dcedde86e69cfd29cb3115387}
+
+
+number of training events 
+
+
+
+Definition at line 20 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by del\-U(), and U().
+
+\hypertarget{class_b_n_n__regression_a9f95130775752bea784e043d832945c1}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!sig@{sig}}
+\index{sig@{sig}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{sig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-M\-C\-\_\-type} B\-N\-N\-\_\-regression\-::sig\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_a9f95130775752bea784e043d832945c1}
+
+
+standard deviation for priors 
+
+
+
+Definition at line 21 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by del\-U(), and U().
+
+\hypertarget{class_b_n_n__regression_a608b84f81e365e0fd18662583982bc1f}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!siga@{siga}}
+\index{siga@{siga}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{siga}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-M\-C\-\_\-type} B\-N\-N\-\_\-regression\-::siga\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_a608b84f81e365e0fd18662583982bc1f}
+
+
+standard deviation for a parameters 
+
+
+
+Definition at line 29 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by del\-U(), and Ln\-Prior().
+
+\hypertarget{class_b_n_n__regression_a6c793005c574b73cfe7d0e1776c21c52}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!sigb@{sigb}}
+\index{sigb@{sigb}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{sigb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-M\-C\-\_\-type} B\-N\-N\-\_\-regression\-::sigb\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_a6c793005c574b73cfe7d0e1776c21c52}
+
+
+standard deviation for b parameters 
+
+
+
+Definition at line 27 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by del\-U(), and Ln\-Prior().
+
+\hypertarget{class_b_n_n__regression_ac7097e88870f47f312e8de1c6f81c04b}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!sigu@{sigu}}
+\index{sigu@{sigu}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{sigu}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-M\-C\-\_\-type} B\-N\-N\-\_\-regression\-::sigu\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_ac7097e88870f47f312e8de1c6f81c04b}
+
+
+standard deviation for u parameters 
+
+
+
+Definition at line 30 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by del\-U(), and Ln\-Prior().
+
+\hypertarget{class_b_n_n__regression_af06eef668a70e92a122b185c55003b66}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!sigv@{sigv}}
+\index{sigv@{sigv}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{sigv}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-M\-C\-\_\-type} B\-N\-N\-\_\-regression\-::sigv\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_af06eef668a70e92a122b185c55003b66}
+
+
+standard deviation for v parameters 
+
+
+
+Definition at line 28 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by del\-U(), and Ln\-Prior().
+
+\hypertarget{class_b_n_n__regression_aa99d3e95fd4751552cbafec043b4b27d}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!t@{t}}
+\index{t@{t}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{t}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf H\-M\-C\-\_\-type}$>$ B\-N\-N\-\_\-regression\-::t\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_aa99d3e95fd4751552cbafec043b4b27d}
+
+
+targets for training data 
+
+
+
+Definition at line 23 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by B\-N\-N\-\_\-regression(), del\-U(), and U().
+
+\hypertarget{class_b_n_n__regression_a950982785131b5e7945742ef40dd5860}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!w@{w}}
+\index{w@{w}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{w}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf H\-M\-C\-\_\-type}$>$ B\-N\-N\-\_\-regression\-::w\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_a950982785131b5e7945742ef40dd5860}
+
+
+training event weights 
+
+
+
+Definition at line 22 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by del\-U(), and U().
+
+\hypertarget{class_b_n_n__regression_a81f1e9e60fc0c057a99687ec6be99c6e}{\index{B\-N\-N\-\_\-regression@{B\-N\-N\-\_\-regression}!x@{x}}
+\index{x@{x}!BNN_regression@{B\-N\-N\-\_\-regression}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf H\-M\-C\-\_\-type}$>$ B\-N\-N\-\_\-regression\-::x\hspace{0.3cm}{\ttfamily [private]}}}\label{class_b_n_n__regression_a81f1e9e60fc0c057a99687ec6be99c6e}
+
+
+training data 
+
+
+
+Definition at line 17 of file B\-N\-N\-\_\-regression.\-h.
+
+
+
+Referenced by B\-N\-N\-\_\-regression(), del\-U(), and f().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_b_n_n__regression_8h}{B\-N\-N\-\_\-regression.\-h}\item 
+src/\hyperlink{_b_n_n__regression_8cc}{B\-N\-N\-\_\-regression.\-cc}\end{DoxyCompactItemize}

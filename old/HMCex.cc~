@@ -1,0 +1,12 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int nSample = 1000;
+  float q[nSample] = {0};
+  for(int i=0; i<nSample; i++){
+    q[i] = HMC(float eps, vector<float> q);
+  }
+
+}

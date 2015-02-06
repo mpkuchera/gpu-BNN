@@ -1,0 +1,2 @@
+To make with double precision:
+make bin/BNN_ZZ DFLAG="-DHMC_DOUBLE "
