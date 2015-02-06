@@ -1,5 +1,5 @@
 
-CUDA_HOME = /usr/local/cuda
+CUDA_HOME = $(CUDAPATH)
 # define sub-directories
 inc_dir	:= include
 src_dir	:= src
@@ -18,7 +18,7 @@ LIBS	:= -lm
 
 CXXFLAGS:= -O2  $(DFLAG)
 #LDFLAGS :=  # -pg for gprof only!!
-LDFLAGS:=-Wl,-rpath,/usr/local/cuda/lib
+LDFLAGS:=-Wl,-rpath,$(CUDAPATH)/lib
 # for OSX
 ifeq ($(uname), Darwin)
 LDSHARED:= clang++  -dynamiclib -stdlib=libstdc++ # -F/Library/Frameworks -framework CUDA -stdlib=libstdc++
@@ -30,7 +30,7 @@ endif
 CC=clang++  -stdlib=libstdc++ #-Xcompiler -stdlib=libstdc++ # -F/Library/Frameworks -framework CUDA  -stdlib=libstdc++
 CPPFLAGS:= -I include
 #CU=nvcc -ccbin /usr/bin/clang -Xcompiler -arch x86_64 -stdlib=libstdc++ 
-CU=nvcc -ccbin /usr/bin/clang++ -Xlinker -rpath,/usr/local/cuda/lib # -stdlib=libstdc++ #-m64 -Xcompiler -arch -Xcompiler x86_64 -stdlib=libstdc++ #-stdlib=libstdc++ 
+CU=nvcc -ccbin /usr/bin/clang++ -Xlinker -rpath,$(CUDAPATH)/lib # -stdlib=libstdc++ #-m64 -Xcompiler -arch -Xcompiler x86_64 -stdlib=libstdc++ #-stdlib=libstdc++ 
 
 INC_LIB	:= $(wildcard $(inc_dir)/*.h)
 HMC_SRC	:= $(wildcard $(src_dir)/*.cc)
@@ -61,15 +61,15 @@ $(applications)	: $(bin_dir)/%	:  $(lib_dir)/%.o $(sharedlib)
 
 $(sharedlib) : $(lib_objs) $(cuda_objs) $(usr_objs)
 	@echo "---> Linking $@"
-	$(AT)$(LDSHARED) $(LDFLAGS) -F/Library/Frameworks -framework CUDA -L$(CUDA_HOME)/lib -lcuda -lcudart -lcublas $(cuda_objs) $(lib_objs) $(usr_objs) -o $@
+	$(AT)$(LDSHARED) $(LDFLAGS) -F/Library/Frameworks -framework CUDA -L$(CUDA_HOME)/lib $(cuda_objs) $(lib_objs) $(usr_objs) -o $@
 
 $(app_objs)	: $(lib_dir)/%.o : $(app_dir)/%.cc $(INC_LIB) $(lib_objs)
 	@echo "----> Compiling  app_objs $@"
-	$(AT)$(CU)  $(CPPFLAGS)  -lcuda -lcudart -lcufft -lcublas  -c -o $@ $<
+	$(AT)$(CU)  $(CPPFLAGS) -c -o $@ $<
 
 $(cuda_objs)	: $(lib_dir)/%.o : $(src_dir)/%.cu $(INC_LIB)
 	@echo "----> Compiling cuda_objs $@"
-	$(AT)$(CU) $(CPPFLAGS) -lcuda -lcudart -lcufft -lcublas  -c -o $@ $<
+	$(AT)$(CU) $(CPPFLAGS)  -c -o $@ $<
 
 $(lib_objs)	: $(lib_dir)/%.o : $(src_dir)/%.cc $(INC_LIB)
 	@echo "----> Compiling lib_objs $@"
