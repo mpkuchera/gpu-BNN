@@ -58,7 +58,7 @@ inline std::vector<HMC_type> HMC_base::calc_step(std::vector<HMC_type> &q){
 
 //NOTE: can not inline this function
 inline std::vector<HMC_type> HMC_base::it(std::vector<HMC_type> &q0) {
-  std::cout << "begin it()\n";
+  //std::cout << "begin it()\n";
   std::vector<HMC_type> eps(NP);
   //eps = calc_step(q0); /*!< Uq0 calculated in this function */
   Uq0 = U(q0);
