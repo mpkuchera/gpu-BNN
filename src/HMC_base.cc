@@ -50,7 +50,6 @@ inline std::vector<HMC_type> HMC_base::calc_step(std::vector<HMC_type> &q){
     }
     //qp[i] -= h;
     //qm[i] += h;
-   //eps[i] = 0.05; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   }
   //std::cout << std::endl;
   return eps;
@@ -107,7 +106,7 @@ inline std::vector<HMC_type> HMC_base::it(std::vector<HMC_type> &q0) {
     }
     //std::cout << "dU[i] = " << dU[i] << std::endl;
   }
-  std::cout << "Begin leapfrog\n";
+  //  std::cout << "Begin leapfrog\n";
   for(int i=0;i<L;i++){
     //std::cout << "i = " << i << std::endl;
     // 1 step in position
