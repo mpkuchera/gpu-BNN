@@ -1,8 +1,9 @@
 # ------------------------------------------------------------------------------
+# Updated: 27-Mar-2015 MPK - Mac/Linux compatibility
 # Updated: 06-Feb-2015 HBP - tweak
 # ------------------------------------------------------------------------------
 # Remove @ symbol to have a verbose printout
-AT 	:= @
+AT 	:= #@
 
 # define sub-directories
 inc_dir	:= include
@@ -33,7 +34,7 @@ ifeq ($(OS_ARCH),armv7l)
 SMS ?= 20 30 32 35 37 50
 
 else
-SMS ?= 11 20 30 35 37 50
+SMS ?= 11 20 30 35 50
 endif
 
 
@@ -50,14 +51,19 @@ endif
 endif
 
 # compilers
+ifeq ($(OS_ARCH),Darwin)
 CC	:= clang++ -stdlib=libstdc++
 CU	:= nvcc -ccbin clang++ -Xcompiler
+else
+CC	:= g++ -fPIC #-stdlib=libstdc++
+CU	:= nvcc -ccbin g++ -Xcompiler -fPIC 
+endif
 
 # flags
 CPPFLAGS:= -Iinclude
 CXXFLAGS:= -O2  $(DFLAG) -m$(OS_SIZE)
 LDFLAGS	:= -m$(OS_SIZE)
-LDSHARED:= nvcc -shared
+LDSHARED:= nvcc -ccbin $(CC) -shared 
 
 # other libraries
 LIBS	:= -lm
