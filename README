@@ -1,2 +1,10 @@
+This work explores batch training Bayesian Neural Networks using Graphics Processing Units. 
+
+This work along with other results were presented in my dissertation: M. Perry, Bayesian Neural Networks in Data-Intensive
+High Energy Physics Applications, http://diginole.lib.fsu.edu/islandora/object/fsu:185301/datastream/PDF/view
+
+
+Note: 
+
 To make with double precision:
 make bin/BNN_ZZ DFLAG="-DHMC_DOUBLE "
